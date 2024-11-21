@@ -1,0 +1,459 @@
+{% load static %}
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>employee change password</title>
+    <link rel="icon" href="{% static 'img/bugs.jpg' %}" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}" />
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" />
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}" />
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}" />
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" />
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}" />
+    <!-- style CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+
+  <body>
+    <!--::header part start::-->
+        {% include 'employee_header.html' %}
+<!--   <header class="main_menu home_menu">-->
+<!--      <div class="container">-->
+<!--        <div class="row align-items-center">-->
+<!--          <div class="col-lg-12">-->
+<!--            <nav class="navbar navbar-expand-lg navbar-light">-->
+<!--              <a class="navbar-brand" href="#">-->
+<!--                  <h2 style="color:white;">Bug and Testcase</h2>-->
+<!--              </a>-->
+<!--              <button-->
+<!--                class="navbar-toggler"-->
+<!--                type="button"-->
+<!--                data-toggle="collapse"-->
+<!--                data-target="#navbarSupportedContent"-->
+<!--                aria-controls="navbarSupportedContent"-->
+<!--                aria-expanded="false"-->
+<!--                aria-label="Toggle navigation"-->
+<!--              >-->
+<!--                <span class="ti-menu"></span>-->
+<!--              </button>-->
+
+<!--              <div-->
+<!--                class="collapse navbar-collapse main-menu-item justify-content-center"-->
+<!--                id="navbarSupportedContent"-->
+<!--              >-->
+<!--                <ul class="navbar- nav align-items-center">-->
+<!--                  {% if  role == "manager" %}-->
+<!--                  <li class="nav-item">-->
+<!--&lt;!&ndash;                    <a class="nav-link" href="{% url 'employee_home' %}">Home</a>&ndash;&gt;-->
+<!--                  </li>-->
+<!--                  <li class="nav-item dropdown">-->
+<!--                    <a-->
+<!--                      class="nav-link dropdown-toggle"-->
+<!--                      href="blog.html"-->
+<!--                      id="navbarDropdown"-->
+<!--                      role="button"-->
+<!--                      data-toggle="dropdown"-->
+<!--                      aria-haspopup="true"-->
+<!--                      aria-expanded="false"-->
+<!--                    >-->
+<!--                      employee-->
+<!--                    </a>-->
+<!--                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--                      <a class="dropdown-item" href="{% url 'employee_change_pwd' %}">Change password</a>-->
+<!--                      <a class="dropdown-item" href="{% url 'employee_edit_profile' %}">Update Profile</a>-->
+<!--                      <a class="dropdown-item" href="{% url 'employee_logout' %}">Logout</a>-->
+<!--                    </div>-->
+<!--                  </li>-->
+<!--                  <li class="nav-item dropdown">-->
+<!--                    <a-->
+<!--                      class="nav-link dropdown-toggle"-->
+<!--                      href="blog.html"-->
+<!--                      id="navbarDropdown1"-->
+<!--                      role="button"-->
+<!--                      data-toggle="dropdown"-->
+<!--                      aria-haspopup="true"-->
+<!--                      aria-expanded="false"-->
+<!--                    >-->
+<!--                      Task-->
+<!--                    </a>-->
+<!--                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--                      <a class="dropdown-item" href="{% url 'add_task' %}">AddTask</a>-->
+<!--                      <a class="dropdown-item" href="{% url 'view_task' %}">ViewTask</a>-->
+<!--                    </div>-->
+<!--                  </li>-->
+<!--                  <li class="nav-item dropdown">-->
+<!--                    <a-->
+<!--                      class="nav-link dropdown-toggle"-->
+<!--                      href="blog.html"-->
+<!--                      id="navbarDropdown2"-->
+<!--                      role="button"-->
+<!--                      data-toggle="dropdown"-->
+<!--                      aria-haspopup="true"-->
+<!--                      aria-expanded="false"-->
+<!--                    >-->
+<!--                      Views-->
+<!--                    </a>-->
+<!--                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--                      <a class="dropdown-item" href="{% url 'view_testcases' %}">managerviewbugs</a>-->
+<!--                      <a class="dropdown-item" href="{% url 'view_bugs' %}">managerviewtestcases</a>-->
+<!--                    </div>-->
+<!--                  </li>-->
+<!--                  {% endif %}-->
+<!--                  {% if  role == "tester" %}-->
+<!--                  <li class="nav-item">-->
+<!--&lt;!&ndash;                    <a class="nav-link" href="{% url 'employee_home' %}">Home</a>&ndash;&gt;-->
+<!--                  </li>-->
+<!--                  <li class="nav-item dropdown">-->
+<!--                    <a-->
+<!--                      class="nav-link dropdown-toggle"-->
+<!--                      href="blog.html"-->
+<!--                      id="navbarDropdown"-->
+<!--                      role="button"-->
+<!--                      data-toggle="dropdown"-->
+<!--                      aria-haspopup="true"-->
+<!--                      aria-expanded="false"-->
+<!--                    >-->
+<!--                      employee-->
+<!--                    </a>-->
+<!--                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--                      <a class="dropdown-item" href="{% url 'employee_change_pwd' %}">Change password</a>-->
+<!--                      <a class="dropdown-item" href="{% url 'employee_edit_profile' %}">Update Profile</a>-->
+<!--                      <a class="dropdown-item" href="{% url 'employee_logout' %}">Logout</a>-->
+<!--                    </div>-->
+<!--                  </li>-->
+<!--                  <li class="nav-item dropdown">-->
+<!--                    <a-->
+<!--                      class="nav-link dropdown-toggle"-->
+<!--                      href="blog.html"-->
+<!--                      id="navbarDropdown1"-->
+<!--                      role="button"-->
+<!--                      data-toggle="dropdown"-->
+<!--                      aria-haspopup="true"-->
+<!--                      aria-expanded="false"-->
+<!--                    >-->
+<!--                      Testcase-->
+<!--                    </a>-->
+<!--                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--                      <a class="dropdown-item" href="{% url 'add_testcase' %}">AddTestcase</a>-->
+<!--                      <a class="dropdown-item" href="{% url 'view_testcase' %}">ViewTestcase</a>-->
+<!--                    </div>-->
+<!--                  </li>-->
+<!--                  <li class="nav-item dropdown">-->
+<!--                    <a-->
+<!--                      class="nav-link dropdown-toggle"-->
+<!--                      href="blog.html"-->
+<!--                      id="navbarDropdown2"-->
+<!--                      role="button"-->
+<!--                      data-toggle="dropdown"-->
+<!--                      aria-haspopup="true"-->
+<!--                      aria-expanded="false"-->
+<!--                    >-->
+<!--                      Bug-->
+<!--                    </a>-->
+<!--                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--                      <a class="dropdown-item" href="{% url 'add_bug' %}">AddBug</a>-->
+<!--                      <a class="dropdown-item" href="{% url 'view_bug' %}">ViewBug</a>-->
+<!--                    </div>-->
+<!--                  </li>-->
+<!--                  {% endif %}-->
+<!--                  {% if  role == "devloper" %}-->
+<!--                  <li class="nav-item">-->
+<!--&lt;!&ndash;                    <a class="nav-link" href="{% url 'employee_home' %}">Home</a>&ndash;&gt;-->
+<!--                  </li>-->
+<!--                  <li class="nav-item dropdown">-->
+<!--                    <a-->
+<!--                      class="nav-link dropdown-toggle"-->
+<!--                      href="blog.html"-->
+<!--                      id="navbarDropdown"-->
+<!--                      role="button"-->
+<!--                      data-toggle="dropdown"-->
+<!--                      aria-haspopup="true"-->
+<!--                      aria-expanded="false"-->
+<!--                    >-->
+<!--                      employee-->
+<!--                    </a>-->
+<!--                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--                      <a class="dropdown-item" href="{% url 'employee_change_pwd' %}">Change password</a>-->
+<!--                      <a class="dropdown-item" href="{% url 'employee_edit_profile' %}">Update Profile</a>-->
+<!--                      <a class="dropdown-item" href="{% url 'employee_logout' %}">Logout</a>-->
+<!--                    </div>-->
+<!--                  </li>-->
+<!--                  <li class="nav-item dropdown">-->
+<!--                    <a-->
+<!--                      class="nav-link dropdown-toggle"-->
+<!--                      href="blog.html"-->
+<!--                      id="navbarDropdown1"-->
+<!--                      role="button"-->
+<!--                      data-toggle="dropdown"-->
+<!--                      aria-haspopup="true"-->
+<!--                      aria-expanded="false"-->
+<!--                    >-->
+<!--                      Views-->
+<!--                    </a>-->
+<!--                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--                      <a class="dropdown-item" href="{% url 'developer_view_bugs' %}">DeveloperViewbugs</a>-->
+<!--                      <a class="dropdown-item" href="{% url 'developer_view_testcases' %}">DeveloperViewTestcases</a>-->
+<!--                    </div>-->
+<!--                  </li>-->
+<!--                  {% endif %}-->
+<!--                  {% if role == "analyst" %}-->
+<!--                  <li class="nav-item dropdown">-->
+<!--                    <a-->
+<!--                      class="nav-link dropdown-toggle"-->
+<!--                      href="blog.html"-->
+<!--                      id="navbarDropdown"-->
+<!--                      role="button"-->
+<!--                      data-toggle="dropdown"-->
+<!--                      aria-haspopup="true"-->
+<!--                      aria-expanded="false"-->
+<!--                    >-->
+<!--                      employee-->
+<!--                    </a>-->
+<!--                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--                      <a class="dropdown-item" href="{% url 'employee_change_pwd' %}">Change password</a>-->
+<!--                      <a class="dropdown-item" href="{% url 'employee_edit_profile' %}">Update Profile</a>-->
+<!--                      <a class="dropdown-item" href="{% url 'employee_logout' %}">Logout</a>-->
+<!--                    </div>-->
+<!--                  </li>-->
+<!--                    <li class="nav-item dropdown">-->
+<!--                    <a-->
+<!--                      class="nav-link dropdown-toggle"-->
+<!--                      href="blog.html"-->
+<!--                      id="navbarDropdown1"-->
+<!--                      role="button"-->
+<!--                      data-toggle="dropdown"-->
+<!--                      aria-haspopup="true"-->
+<!--                      aria-expanded="false"-->
+<!--                    >-->
+<!--                      Analyst-->
+<!--                    </a>-->
+<!--                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--                      <a class="dropdown-item" href="{% url 'analyst_view_bugs' %}">AnalystViewbugs</a>-->
+<!--                      <a class="dropdown-item" href="{% url 'analyst_view_testcases' %}">AnalystViewTestcases</a>-->
+<!--                    </div>-->
+<!--                  </li>-->
+<!--                  {% endif %}-->
+<!--                </ul>-->
+<!--              </div>-->
+<!--            </nav>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </header>-->
+    <!-- Header part end-->
+
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg align-items-center">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-sm-6">
+                    <div class="breadcrumb_tittle">
+                        <h2>Change Password</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb start-->
+
+  <!-- ================ contact section start ================= -->
+  <section class="contact-section section_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="contact-title"></h2>
+        </div>
+        <div class="col-lg-8">
+          <form class="form-contact contact_form" action="" method="post">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-12">
+                  <div class="form-group">
+<!--                      <input class="form-control" type="text" name="role"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter role'" value="{{role}}" placeholder = 'Enter role'><br>-->
+                </div>
+              </div>
+                <div class="col-sm-12">
+                <div class="form-group">
+                    Enter Email
+                  <input class="form-control" type="email" name="email"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter old password'" placeholder = 'Enter Email' value="{{email}}" readonly><br>
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="form-group">
+                    Enter Old Password
+                  <input class="form-control" type="password" name="password"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter old password'" placeholder = 'Enter Old Password' required><br>
+                </div>
+              </div><br>
+              <div class="col-sm-12">
+                <div class="form-group">
+                    Enter new password
+                  <input class="form-control" type="password" name="new_password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter new password'" placeholder = 'Enter New Password' required><br>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <!--<input class="form-control" type="text" name="subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder = 'Enter Subject'>-->
+                </div>
+              </div>
+            </div>
+            <div class="form-group mt-3">
+              <button class="button" type="submit">Change password</button>
+                              {{msg}}
+            </div>
+          </form>
+        </div>
+        <!--<div class="col-lg-4">
+          <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-home"></i></span>
+            <div class="media-body">
+              <h3>Buttonwood, California.</h3>
+              <p>Rosemead, CA 91770</p>
+            </div>
+          </div>
+          <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+            <div class="media-body">
+              <h3>00 (440) 9865 562</h3>
+              <p>Mon to Fri 9am to 6pm</p>
+            </div>
+          </div>
+          <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-email"></i></span>
+            <div class="media-body">
+              <h3>support@colorlib.com</h3>
+              <p>Send us your query anytime!</p>
+            </div>
+          </div>-->
+        </div>
+      </div>
+  </section>
+  <!-- ================ contact section end ================= -->
+
+<!-- footer part start-->
+<footer class="footer-area">
+    <div class="container">
+        <div class="row justify-content-between">
+        <div class="col-sm-6 col-md-3 col-xl-3">
+            <div class="single-footer-widget footer_1">
+<!--            <a href="{% url 'index' %}">-->
+<!--                <img src="{% static 'img/footer_logo.png' %}" alt="" />-->
+<!--            </a>-->
+<!--            <ul>-->
+<!--                <li><a href="#">Work</a></li>-->
+<!--                <li><a href="#">Services</a></li>-->
+<!--                <li><a href="#">Contact</a></li>-->
+<!--            </ul>-->
+<!--            <div class="social_icon">-->
+<!--                <a href="#"><i class="ti-facebook"></i></a>-->
+<!--                <a href="#"><i class="ti-twitter-alt"></i></a>-->
+<!--                <a href="#"><i class="ti-dribbble"></i></a>-->
+<!--                <a href="#"><i class="ti-instagram"></i></a>-->
+<!--            </div>-->
+            </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-md-3">
+            <div class="single-footer-widget footer_2">
+<!--            <h4>Company</h4>-->
+<!--            <ul>-->
+<!--                <li>-->
+<!--                <a href="#">Media</a>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                <a href="#">Carrier</a>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                <a href="#">Testimonials</a>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                <a href="#">FAQ</a>-->
+<!--                </li>-->
+<!--            </ul>-->
+            </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-md-3">
+            <div class="single-footer-widget footer_2">
+<!--            <h4>Resources</h4>-->
+<!--            <ul>-->
+<!--                <li>-->
+<!--                <a href="#">UI kit</a>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                <a href="#">WordPress theme</a>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                <a href="#">Illustration</a>-->
+<!--                </li>-->
+<!--            </ul>-->
+            </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 col-md-3">
+            <div class="single-footer-widget footer_2">
+<!--            <div class="single_contact_info">-->
+<!--                <h3>London - UK</h3>-->
+<!--                <p>127, Manchaster city, London</p>-->
+<!--                <p>+008 728 362 278</p>-->
+<!--            </div>-->
+<!--            <div class="single_contact_info">-->
+<!--                <h3>New York - USA</h3>-->
+<!--                <p>127, Manchaster city, London</p>-->
+<!--                <p>+008 728 362 278</p>-->
+<!--            </div>-->
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-lg-12">
+            <div class="copyright_part_text text-center">
+            <div class="row">
+                <div class="col-lg-12">
+                <p class="footer-text m-0">
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </footer>
+
+    <!-- footer part end-->
+
+    <!-- jquery plugins here-->
+    <script src="{% static 'js/jquery-1.12.1.min.js' %}"></script>
+    <!-- popper js -->
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <!-- bootstrap js -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- easing js -->
+    <script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
+    <!-- isotope js -->
+    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <!-- particles js -->
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <!--contact js-->
+    <script src="{% static 'js/contact.js' %}"></script>
+    <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'js/jquery.form.js' %}"></script>
+    <script src="{% static 'js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'js/mail-script.js' %}"></script>
+    <!-- custom js -->
+    <script src="{% static 'js/custom.js' %}"></script>
+</body>
